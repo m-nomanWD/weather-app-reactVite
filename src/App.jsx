@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { MainContainer } from './components'
+
 import './App.css'
+import { ClockLoader } from 'react-spinners'
 import { toast } from 'react-hot-toast'
 import axios from 'axios'
 
@@ -42,11 +43,11 @@ function App() {
   )
 
   if (isLoading) {
-    return <h1>Loading..</h1>
+    return <ClockLoader color={'red'} loading={isLoading} size={150} />
   } else {
     return (
       <>
-        <h1>data Fullfilld</h1>
+        <MainContainer />
       </>
     )
   }
