@@ -1,2 +1,4 @@
 import Clock from './Icons'
-export { Clock }
+import { PlusButton } from './Icons'
+import { SearchIcon } from './Icons'
+export { Clock, PlusButton, SearchIcon }

@@ -1,0 +1,7 @@
+h1 {
+  display: flex;
+}
+
+.textContainer span {
+  font-size: 40%;
+}

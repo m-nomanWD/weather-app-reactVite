@@ -1,0 +1,48 @@
+.switchToggleContainer {
+  width: 90px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.toggleContainer {
+  width: 30px;
+  background-color: gray;
+  height: 10px;
+
+  position: relative;
+
+  border-radius: 8px;
+}
+span {
+  display: flex;
+}
+b {
+  font-size: 10px;
+}
+.toggle {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translateX(-5px);
+  transition: 0.5s transform ease-in-out;
+  top: -5px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.809);
+  cursor: pointer;
+}
+.toggleSwitch {
+  transform: translateX(15px);
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  transition: 0.5s transform ease-in-out;
+  top: -5px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.809);
+  cursor: pointer;
+}

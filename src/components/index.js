@@ -9,6 +9,9 @@ import MainText from './atoms/mainText/MainText'
 import AsideCard from './asideCard/AsideCard'
 import SingleWeatherStrip from './strip/SingleWeatherStrip'
 import WeekWeatherContainer from './weekWeather/WeekWeatherContainer'
+import Searchbar from './atoms/searchbar/Searchbar'
+import SwitchButton from './atoms/switchButton/SwitchButton'
+import CitiesList from './cities/CitiesList'
 export {
   MainContainer,
   DetailWeather,
@@ -21,4 +24,7 @@ export {
   AsideCard,
   SingleWeatherStrip,
   WeekWeatherContainer,
+  Searchbar,
+  SwitchButton,
+  CitiesList,
 }

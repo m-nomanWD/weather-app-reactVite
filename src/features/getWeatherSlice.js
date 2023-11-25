@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import authFetch from '../axios/custom'
+import toast from 'react-hot-toast'
 const key = 'e7669c5e6de6efbdf2a42708fbb4cdb7'
 const daysCount = 5
 const initialState = {
@@ -7,6 +8,7 @@ const initialState = {
   isError: false,
   currentWeather: {},
   weekWeather: {},
+  citiesList: [],
 }
 export const getCurrentWeather = createAsyncThunk(
   'currentWeater/getCurrentWeather',
@@ -33,7 +35,25 @@ const weatherSlice = createSlice({
   initialState,
   reducers: {
     handleCurrentWeather: (state, action) => {
-      console.log(state)
+      console.log(action.payload)
+      const currentCity = state.citiesList.find(
+        (city) => city.name === action.payload
+      )
+      console.log(currentCity)
+      state.currentWeather = currentCity
+    },
+    handleAddCity: (state, action) => {
+      const checkCity = state.citiesList.filter(
+        (city) => city.name === action.payload.name
+      )
+      if (checkCity.length === 0) {
+        state.citiesList.push(action.payload)
+      } else {
+        toast.error('city is already in the list')
+      }
+    },
+    handleRemoveCity: (state, action) => {
+      toast.error('city remove from list')
     },
   },
   extraReducers: {
@@ -45,6 +65,9 @@ const weatherSlice = createSlice({
 
       state.currentWeather = action.payload.currentWeatherData
       state.weekWeather = action.payload.weekWeatherData
+      if (state.citiesList.length === 0) {
+        state.citiesList.push(action.payload.currentWeatherData)
+      }
     },
     [getCurrentWeather.rejected]: (state) => {
       state.isLoading = false
@@ -53,5 +76,6 @@ const weatherSlice = createSlice({
     },
   },
 })
-
+export const { handleAddCity, handleRemoveCity, handleCurrentWeather } =
+  weatherSlice.actions
 export default weatherSlice.reducer

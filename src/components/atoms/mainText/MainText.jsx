@@ -3,5 +3,11 @@ import styles from './index.module.css'
 
 export default function MainText({ text, extention, level }) {
   const Tag = `h${level}`
-  return <Tag>{text}</Tag>
+  return (
+    <div className={styles.textContainer}>
+      <Tag className={styles.textContainer}>
+        {text} <span>{extention}</span>
+      </Tag>
+    </div>
+  )
 }

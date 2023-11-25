@@ -6,7 +6,7 @@ import { CurrentWeather, AsideHeader, AsideCard } from '../index'
 
 export default function Sidebar() {
   return (
-    <aside>
+    <aside className={styles.sidebarConainer}>
       <AsideHeader />
       <CurrentWeather />
       <AsideCard />
