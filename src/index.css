@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --background-light: #f8f8f8;
+  --background-dark: #121212;
+  --text-light: #333333;
+  --text-dark: #ffffff;
+  --card-background-light: #ffffff;
+  --card-background-dark: #1a1a1a;
+  --focused-background-light: #e0e0e0;
+  --focused-background-dark: #333333;
+  --svg-color: #666666;
+  --input-border-color: #cccccc;
+  --hover-bg-color: #f0f0f0;
+  --accent: #646cff; /* Added an accent color for links and buttons in light theme */
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,29 +28,49 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: green;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  display: flex;
+  width: fit-content;
+  margin: auto;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 24px;
 }
-svg {
-  background-color: yellow;
+
+h2 {
+  font-size: 20px;
 }
+
+h3 {
+  font-size: 18px;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.25s; /* Added smooth transition for link color */
+}
+
+a:hover {
+  color: #535bf2;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -43,31 +78,30 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--card-background-dark);
+  color: var(--text-dark);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--hover-bg-color);
+  border-color: var(--accent);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 svg {
   height: 25px;
   width: 25px;
-}
+  fill: var(--accent);
+  background-color: var(
+    --svg-color
+  ); /* Set SVG background color to transparent */
+  cursor: pointer;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  border-radius: 4px;
 }

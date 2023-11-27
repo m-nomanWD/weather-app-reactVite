@@ -10,9 +10,11 @@ export default function WeekWeatherContainer() {
   return (
     <div>
       <CardHeading text={'5-days forecast'} icon={<Clock />} />
-      {list.map((item) => (
-        <SingleWeatherStrip key={item.dt} item={item} />
-      ))}
+      <div className={styles.stripContainer}>
+        {list.map((item) => (
+          <SingleWeatherStrip key={item.dt} item={item} />
+        ))}
+      </div>
     </div>
   )
 }

@@ -1,5 +1,8 @@
 h1 {
   display: flex;
+  margin: 2rem auto 1rem auto;
+
+  width: fit-content;
 }
 
 .textContainer span {

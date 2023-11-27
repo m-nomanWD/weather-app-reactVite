@@ -7,4 +7,26 @@ const convertToFer = (temp) => {
   const fer = ((9 / 5) * cal + 32).toFixed(2)
   return fer
 }
-export { convertToCal, convertToFer }
+const convertTime = (timestamp, timezoneOffset, type) => {
+  const milliseconds = timestamp * 1000
+
+  // Create a new Date object
+  const date = new Date(milliseconds)
+
+  // Adjust for timezone offset
+  const adjustedMilliseconds = milliseconds + timezoneOffset * 1000
+  const adjustedDate = new Date(adjustedMilliseconds)
+
+  // Format the date and time
+  const formattedDate = adjustedDate.toISOString().split('T')[0]
+  const formattedTime = adjustedDate
+    .toISOString()
+    .split('T')[1]
+    .replace(/\..+/, '')
+  if (type === 'time') {
+    return formattedTime
+  } else {
+    return formattedDate
+  }
+}
+export { convertToCal, convertToFer, convertTime }

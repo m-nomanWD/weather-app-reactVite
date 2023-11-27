@@ -8,7 +8,7 @@
 }
 .toggleContainer {
   width: 30px;
-  background-color: gray;
+  background-color: var(--svg-color);
   height: 10px;
 
   position: relative;
@@ -30,7 +30,7 @@ b {
   transition: 0.5s transform ease-in-out;
   top: -5px;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.809);
+  background-color: var(--accent);
   cursor: pointer;
 }
 .toggleSwitch {
@@ -43,6 +43,6 @@ b {
   transition: 0.5s transform ease-in-out;
   top: -5px;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.809);
+  background-color: var(--accent);
   cursor: pointer;
 }
