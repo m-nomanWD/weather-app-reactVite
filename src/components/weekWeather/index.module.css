@@ -1,5 +1,15 @@
-.stripContainer {
+.weekWeatherContainer {
   background-color: var(--card-background-dark);
-  display: flex;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  max-width: 95%;
+  overflow: hidden;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+.stripContainer {
+  display: flex;
+}
+.stripContainer svg {
+  background-color: transparent;
 }

@@ -1,4 +1,23 @@
 .sidebarConainer {
-  width: 400px;
+  max-width: 350px;
   padding: 1rem;
+  align-items: center;
+}
+.cardContiner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  justify-content: center;
+
+  margin: 5rem auto auto auto;
+}
+@media screen and (max-width: 700px) {
+  .sidebarConainer {
+    min-width: 100%;
+    padding: 1rem;
+  }
+  .cardContiner {
+    max-width: 400px;
+  }
 }

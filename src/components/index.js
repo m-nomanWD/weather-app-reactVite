@@ -12,6 +12,7 @@ import WeekWeatherContainer from './weekWeather/WeekWeatherContainer'
 import Searchbar from './atoms/searchbar/Searchbar'
 import SwitchButton from './atoms/switchButton/SwitchButton'
 import CitiesList from './cities/CitiesList'
+import WeatherIcon from './atoms/weatherIcons/WeatherIcon'
 export {
   MainContainer,
   DetailWeather,
@@ -27,4 +28,5 @@ export {
   Searchbar,
   SwitchButton,
   CitiesList,
+  WeatherIcon,
 }

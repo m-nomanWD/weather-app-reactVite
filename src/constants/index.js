@@ -1,5 +1,43 @@
 import Clock from './Icons'
-import { PlusButton } from './Icons'
-import { SearchIcon } from './Icons'
-import { Rainy } from './Icons'
-export { Clock, PlusButton, SearchIcon, Rainy }
+import {
+  PlusButton,
+  ArrowUp,
+  ArrowDown,
+  Cloud,
+  Thunder,
+  Snow,
+  FewCloudDay,
+  FewCloudNight,
+  SearchIcon,
+  Rainy,
+  FeelsLike,
+  Wind,
+  ClearSky,
+  Moon,
+  Sun,
+  SunRise,
+  SunSet,
+  PaperAirplain,
+} from './Icons'
+
+export {
+  ClearSky,
+  Clock,
+  PlusButton,
+  SearchIcon,
+  Rainy,
+  FeelsLike,
+  Wind,
+  ArrowUp,
+  ArrowDown,
+  Cloud,
+  Thunder,
+  Snow,
+  FewCloudDay,
+  FewCloudNight,
+  Moon,
+  Sun,
+  SunRise,
+  SunSet,
+  PaperAirplain,
+}

@@ -1,0 +1,20 @@
+.multiCloud {
+  position: relative;
+
+  min-width: 42px;
+  height: 30px;
+  /* background-color: var(--focused-background-dark); */
+  border-radius: 4px;
+}
+.multiCloud svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: transparent;
+}
+.multiCloud svg:nth-child(1) {
+  left: 12px;
+  background-color: transparent;
+  z-index: 5;
+}

@@ -1,13 +1,15 @@
 .headingContainer {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
 }
 .containerCenter {
   display: flex;
   align-items: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-bottom: gray 1px solid;
   height: 30px;
+  border-bottom: gray 1px solid;
+  padding: 0 0 0.5rem 0;
 }
 .icon {
   margin-right: 0.5rem;

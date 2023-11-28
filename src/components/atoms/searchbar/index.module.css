@@ -21,8 +21,10 @@
 }
 .inputContainer svg {
   height: 40px;
+  width: 40px;
   padding: 0 0.5rem;
   border-radius: 0;
+  box-shadow: none;
 }
 input:focus {
   outline: none;

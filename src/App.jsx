@@ -43,7 +43,11 @@ function App() {
   )
 
   if (isLoading) {
-    return <ClockLoader color={'red'} loading={isLoading} size={150} />
+    return (
+      <div className='loading'>
+        <ClockLoader color={'white'} loading={isLoading} size={150} />
+      </div>
+    )
   } else {
     return (
       <>
