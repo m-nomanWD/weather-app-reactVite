@@ -1,10 +1,17 @@
 .multiCloud {
   position: relative;
-
-  min-width: 42px;
+  margin: inherit auto;
+  width: 42px;
   height: 30px;
-  /* background-color: var(--focused-background-dark); */
+  margin: inherit auto;
+
   border-radius: 4px;
+}
+.sidebarConainer .multiCloud svg {
+  margin: auto;
+  background-color: var(--focused-background-dark);
+  position: fixed;
+  color: green;
 }
 .multiCloud svg {
   position: absolute;

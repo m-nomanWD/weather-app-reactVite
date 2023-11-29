@@ -1,0 +1,11 @@
+.citiesContainer {
+  background-color: var(--card-background-dark);
+  margin: 2rem auto 1rem auto;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.singleCityContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

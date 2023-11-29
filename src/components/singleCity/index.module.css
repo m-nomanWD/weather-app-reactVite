@@ -1,0 +1,24 @@
+.singleCityContainer {
+  max-width: 200px;
+  padding: 0.5rem 1rem;
+  border-right: 4px solid gray;
+  cursor: pointer;
+}
+.cityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tempContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.tempContainer h1 {
+  font-size: 32px;
+}
+.tempContainer p {
+  margin: 0;
+}

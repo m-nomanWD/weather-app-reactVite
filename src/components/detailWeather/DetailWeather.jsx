@@ -5,9 +5,9 @@ export default function DetailWeather() {
   return (
     <div className={styles.detailWeatherContainer}>
       <DetailWeatherHeader />
+      <CitiesList />
       <div className='mainContainer'>
         <WeekWeatherContainer />
-        <CitiesList />
       </div>
     </div>
   )

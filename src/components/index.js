@@ -13,6 +13,7 @@ import Searchbar from './atoms/searchbar/Searchbar'
 import SwitchButton from './atoms/switchButton/SwitchButton'
 import CitiesList from './cities/CitiesList'
 import WeatherIcon from './atoms/weatherIcons/WeatherIcon'
+import SingleCity from './singleCity/SingleCity'
 export {
   MainContainer,
   DetailWeather,
@@ -29,4 +30,5 @@ export {
   SwitchButton,
   CitiesList,
   WeatherIcon,
+  SingleCity,
 }

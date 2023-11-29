@@ -25,6 +25,9 @@ const convertTime = (timestamp, timezoneOffset, type) => {
     .replace(/\..+/, '')
   if (type === 'time') {
     return formattedTime
+  }
+  if (type === 'a') {
+    return adjustedDate
   } else {
     return formattedDate
   }
