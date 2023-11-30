@@ -1,11 +1,14 @@
 .mainContainer {
   display: flex;
-  padding: 1rem;
+  margin-top: 2rem;
+
+  margin: auto;
   justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 962px) {
   .mainContainer {
     flex-direction: column;
+    max-width: 100%;
   }
 }

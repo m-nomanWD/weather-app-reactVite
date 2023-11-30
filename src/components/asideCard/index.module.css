@@ -1,9 +1,9 @@
 .card {
   width: 150px;
-  background-color: var(--card-background-dark);
+  background-color: var(--focused-background-dark);
   border-radius: 4px;
   padding: 1rem 0;
-  margin: 0.75rem;
+  margin: 0.5rem;
 }
 .card h3 {
   display: flex;
@@ -13,4 +13,7 @@
 }
 .card p {
   font-size: 12px;
+}
+.card svg {
+  background-color: var(--card-background-dark);
 }

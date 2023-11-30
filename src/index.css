@@ -33,6 +33,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 h1,
@@ -98,7 +102,7 @@ svg {
   height: 30px;
   width: 30px;
   stroke-width: 1.25;
-  fill: var(--accent);
+  fill: white;
   background-color: var(
     --focused-background-dark
   ); /* Set SVG background color to transparent */

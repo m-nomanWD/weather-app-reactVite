@@ -10,7 +10,7 @@ export default function WeekWeatherContainer() {
   const { timezone } = city
   return (
     <div className={styles.weekWeatherContainer}>
-      <CardHeading text={'5-days forecast'} icon={<Clock />} />
+      <CardHeading text={'3-hours forecast'} icon={<Clock />} />
       <div className={styles.stripContainer}>
         {list.map((item, index) => (
           <SingleWeatherStrip

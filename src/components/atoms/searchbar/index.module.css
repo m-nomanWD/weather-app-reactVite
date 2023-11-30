@@ -1,20 +1,21 @@
 .inputContainer {
-  width: 250px;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--main-backgroud-dark);
   padding: 0 0rem 0 1rem;
   border-radius: 4px;
   overflow: hidden;
   min-height: 40px;
+  outline: 1px solid gray;
 }
 
 .inputContainer input {
   width: 100%;
+  max-width: 130px;
   height: 40px;
   border: none;
-
+  background-color: var(--main-backgroud-dark);
   outline: none;
   overflow: hidden;
   box-sizing: border-box;
@@ -25,6 +26,7 @@
   padding: 0 0.5rem;
   border-radius: 0;
   box-shadow: none;
+  background-color: var(--card-background-dark);
 }
 input:focus {
   outline: none;

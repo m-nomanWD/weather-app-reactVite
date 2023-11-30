@@ -1,0 +1,20 @@
+.detailWeatherContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+
+  box-sizing: border-box;
+}
+.textContainer {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+.textContainer p {
+  font-size: 12px;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}

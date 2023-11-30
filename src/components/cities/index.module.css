@@ -3,9 +3,15 @@
   margin: 2rem auto 1rem auto;
   border-radius: 4px;
   padding: 1rem;
+  position: relative;
 }
 .singleCityContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+.citiesContainer .plus {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
 }

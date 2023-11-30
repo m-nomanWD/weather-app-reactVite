@@ -1,7 +1,9 @@
 .sidebarConainer {
-  max-width: 350px;
-  padding: 1rem;
+  width: 398px;
+  padding: 1rem 4rem 1rem 1rem;
   align-items: center;
+  background-color: var(--card-background-dark);
+  border-radius: 1.5rem;
 }
 .cardContiner {
   display: flex;
@@ -9,14 +11,19 @@
 
   align-items: center;
   justify-content: center;
-
+  box-sizing: border-box;
   margin: 3rem auto auto auto;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 962px) {
   .sidebarConainer {
-    min-width: 100%;
+    width: 95%;
+
+    margin: auto;
     padding: 1rem;
+    border-radius: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
   .cardContiner {
     max-width: 400px;

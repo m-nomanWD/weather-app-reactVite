@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './index.module.css'
 import { handleCurrentWeather } from '../../features/getWeatherSlice'
 import { CardHeading, SingleCity } from '../index'
-import { PaperAirplain } from '../../constants'
+import { PaperAirplain, PlusButton } from '../../constants'
+import { Searchbar } from '../index'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 export default function CitiesList() {
@@ -15,7 +16,9 @@ export default function CitiesList() {
   //   console.log(data)
   // }
   const dispatch = useDispatch()
-  const { citiesList } = useSelector((store) => store.currentWeather)
+  const { citiesList, currentWeather } = useSelector(
+    (store) => store.currentWeather
+  )
   if (citiesList.length === 0) {
     return <h1>list empty</h1>
   } else {
@@ -23,7 +26,9 @@ export default function CitiesList() {
       <>
         <div className={styles.citiesContainer}>
           <CardHeading icon={<PaperAirplain />} text={'Your cities list'} />
-
+          <span className={styles.plus}>
+            <PlusButton />
+          </span>
           {/* <input
           type='text'
           value={value}

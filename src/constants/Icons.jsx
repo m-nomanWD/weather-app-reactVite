@@ -156,7 +156,7 @@ export function PlusButton({ onClickAction }) {
       stroke='currentColor'
       class='w-6 h-6'
       onClick={handleClick}
-      color='#646cff'
+      color='white'
     >
       <path
         stroke-linecap='round'
