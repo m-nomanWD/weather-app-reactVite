@@ -5,14 +5,12 @@ import { MainText } from '../../index'
 import { Searchbar } from '../../index'
 
 export default function DetailWeatherHeader() {
-  const { currentWeather } = useSelector((store) => store.currentWeather)
-  const { name } = currentWeather
+  // const { currentWeather } = useSelector((store) => store.currentWeather)
+  // const { name } = currentWeather
   return (
     <div className={styles.detailWeatherContainer}>
       <div className={styles.textContainer}>
-        <MainText level={4} text={`Welcome Back To   ${name}`} />
-
-        <p>today's Weather information</p>
+        <MainText text={`Today's Weather`} />
       </div>
       <Searchbar />
     </div>

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import authFetch from '../axios/custom'
 import toast from 'react-hot-toast'
 const key = 'e7669c5e6de6efbdf2a42708fbb4cdb7'
-const daysCount = 5
+const daysCount = 7
 const initialState = {
   isLoading: true,
   isError: false,
@@ -48,6 +48,8 @@ const weatherSlice = createSlice({
       )
       if (checkCity.length === 0) {
         state.citiesList.push(action.payload)
+        const newList = state.citiesList
+        localStorage.setItem('cites', JSON.stringify(newList))
       } else {
         toast.error('city is already in the list')
       }
@@ -65,8 +67,12 @@ const weatherSlice = createSlice({
 
       state.currentWeather = action.payload.currentWeatherData
       state.weekWeather = action.payload.weekWeatherData
-      if (state.citiesList.length === 0) {
+      const localStorageData = JSON.parse(localStorage.getItem('cites'))
+
+      if (state.citiesList.length === 0 && localStorageData === null) {
         state.citiesList.push(action.payload.currentWeatherData)
+      } else {
+        state.citiesList = localStorageData
       }
     },
     [getCurrentWeather.rejected]: (state) => {

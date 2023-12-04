@@ -19,6 +19,9 @@
   outline: none;
   overflow: hidden;
   box-sizing: border-box;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 16px;
 }
 .inputContainer svg {
   height: 40px;

@@ -37,8 +37,24 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
 
+  /* width */
+}
+*::-webkit-scrollbar {
+  width: 4px;
+  max-height: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--focused-background-dark);
+
+  border-radius: 16px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--card-background-dark);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
 h1,
 h2,
 h3,

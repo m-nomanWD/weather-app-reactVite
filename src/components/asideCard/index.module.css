@@ -17,3 +17,11 @@
 .card svg {
   background-color: var(--card-background-dark);
 }
+@media screen and (max-width: 420px) {
+  .card {
+    width: 140px;
+  }
+  .card svg {
+    width: 24px;
+  }
+}

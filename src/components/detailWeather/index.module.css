@@ -1,6 +1,6 @@
 .detailWeatherContainer {
   background-color: var(--focused-background-dark);
-  width: 800px;
+  width: 750px;
   border-radius: 1.5rem;
   margin-left: -3rem;
   padding: 1rem 3rem;
@@ -13,6 +13,7 @@
     padding: 3rem 1rem 1rem 1rem;
     border-radius: 0;
     width: 95%;
+    max-width: 95%;
     margin: auto;
   }
 }

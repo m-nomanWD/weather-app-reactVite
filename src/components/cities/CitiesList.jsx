@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from './index.module.css'
-import { handleCurrentWeather } from '../../features/getWeatherSlice'
+import {
+  handleCurrentWeather,
+  handleAddCity,
+} from '../../features/getWeatherSlice'
 import { CardHeading, SingleCity } from '../index'
 import { PaperAirplain, PlusButton } from '../../constants'
 import { Searchbar } from '../index'
@@ -15,19 +18,47 @@ export default function CitiesList() {
   //   )
   //   console.log(data)
   // }
+  const localStorageData = JSON.parse(localStorage.getItem('cites'))
+  console.log(localStorageData)
   const dispatch = useDispatch()
   const { citiesList, currentWeather } = useSelector(
     (store) => store.currentWeather
   )
+
   if (citiesList.length === 0) {
     return <h1>list empty</h1>
+  }
+  if (localStorageData !== null) {
+    return (
+      <>
+        <div className={styles.citiesContainer}>
+          <CardHeading icon={<PaperAirplain />} text={'Your cities list'} />
+          <span className={styles.plus}>
+            <PlusButton onClickAction={handleAddCity(currentWeather)} />
+          </span>
+          {/* <input
+          type='text'
+          value={value}
+          onChange={(e) => {
+            setValue(e.currentTarget.value)
+            getName()
+          }}
+        /> */}
+          <div className={styles.singleCityContainer}>
+            {localStorageData.map((city) => {
+              return <SingleCity city={city} />
+            })}
+          </div>
+        </div>
+      </>
+    )
   } else {
     return (
       <>
         <div className={styles.citiesContainer}>
           <CardHeading icon={<PaperAirplain />} text={'Your cities list'} />
           <span className={styles.plus}>
-            <PlusButton />
+            <PlusButton onClickAction={handleAddCity(currentWeather)} />
           </span>
           {/* <input
           type='text'

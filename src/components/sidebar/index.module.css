@@ -1,5 +1,5 @@
 .sidebarConainer {
-  width: 398px;
+  max-width: 398px;
   padding: 1rem 4rem 1rem 1rem;
   align-items: center;
   background-color: var(--card-background-dark);
@@ -17,8 +17,8 @@
 
 @media screen and (max-width: 962px) {
   .sidebarConainer {
-    width: 95%;
-
+    min-width: 95%;
+    max-width: 95%;
     margin: auto;
     padding: 1rem;
     border-radius: 0;

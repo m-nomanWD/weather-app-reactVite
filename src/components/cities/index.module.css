@@ -4,11 +4,17 @@
   border-radius: 4px;
   padding: 1rem;
   position: relative;
+  max-width: 100%;
 }
 .singleCityContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  overflow-x: scroll;
+  padding: 0.5rem;
+}
+.singleCityContainer svg {
+  background-color: transparent;
 }
 .citiesContainer .plus {
   position: absolute;

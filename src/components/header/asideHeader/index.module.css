@@ -14,3 +14,25 @@
   width: 100%;
   justify-content: space-between;
 }
+
+.logo {
+  border: 2px solid #ffffff;
+
+  color: var(--focused-background-dark);
+  border-radius: 40%;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  outline: 1px solid var(--focused-background-dark);
+  outline-offset: -4px;
+  text-transform: uppercase;
+}
+.logo:hover {
+  outline-offset: 4px;
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+  color: #ffffff;
+  border-color: var(--focused-background-dark);
+  outline-color: #ffffff;
+}

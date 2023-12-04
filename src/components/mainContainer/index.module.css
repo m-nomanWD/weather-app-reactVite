@@ -1,7 +1,7 @@
 .mainContainer {
   display: flex;
   margin-top: 2rem;
-
+  width: fit-content;
   margin: auto;
   justify-content: center;
   box-sizing: border-box;
@@ -9,6 +9,8 @@
 @media screen and (max-width: 962px) {
   .mainContainer {
     flex-direction: column;
-    max-width: 100%;
+    min-width: 95vw;
+    max-width: 95vw;
+    margin: auto;
   }
 }
