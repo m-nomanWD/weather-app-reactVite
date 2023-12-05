@@ -25,9 +25,9 @@ export default function CitiesList() {
     (store) => store.currentWeather
   )
 
-  if (citiesList.length === 0) {
-    return <h1>list empty</h1>
-  }
+  // if (citiesList.length === null) {
+  //   return <h1>list empty</h1>
+  // }
   if (localStorageData !== null) {
     return (
       <>

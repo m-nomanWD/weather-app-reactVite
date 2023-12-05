@@ -10,6 +10,7 @@ const initialState = {
   weekWeather: {},
   citiesList: [],
 }
+
 export const getCurrentWeather = createAsyncThunk(
   'currentWeater/getCurrentWeather',
   async (url) => {
@@ -67,10 +68,15 @@ const weatherSlice = createSlice({
 
       state.currentWeather = action.payload.currentWeatherData
       state.weekWeather = action.payload.weekWeatherData
+
       const localStorageData = JSON.parse(localStorage.getItem('cites'))
 
       if (state.citiesList.length === 0 && localStorageData === null) {
         state.citiesList.push(action.payload.currentWeatherData)
+        localStorage.setItem(
+          'cites',
+          JSON.stringify([action.payload.currentWeatherData])
+        )
       } else {
         state.citiesList = localStorageData
       }
