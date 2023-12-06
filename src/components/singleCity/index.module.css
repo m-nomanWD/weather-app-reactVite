@@ -1,9 +1,14 @@
-.singleCityContainer {
+.singleCityContainer,
+.activeCity {
   min-width: 200px;
   max-width: 200px;
   padding: 0.5rem 1rem;
   border-right: 4px solid gray;
   cursor: pointer;
+}
+.activeCity {
+  background-color: var(--focused-background-dark);
+  border-radius: 4px;
 }
 .cityHeader {
   display: flex;

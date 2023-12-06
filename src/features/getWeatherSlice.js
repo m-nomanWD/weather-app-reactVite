@@ -9,6 +9,7 @@ const initialState = {
   currentWeather: {},
   weekWeather: {},
   citiesList: [],
+  weekWeatherList: [],
 }
 
 export const getCurrentWeather = createAsyncThunk(
@@ -36,21 +37,27 @@ const weatherSlice = createSlice({
   initialState,
   reducers: {
     handleCurrentWeather: (state, action) => {
-      console.log(action.payload)
       const currentCity = state.citiesList.find(
         (city) => city.name === action.payload
       )
-      console.log(currentCity)
+      const currentWeekWeather = state.weekWeatherList.find(
+        (weekWeather) => weekWeather.city.name === action.payload
+      )
       state.currentWeather = currentCity
+      state.weekWeather = currentWeekWeather
     },
     handleAddCity: (state, action) => {
+      const { currentWeather, weekWeather } = action.payload
       const checkCity = state.citiesList.filter(
-        (city) => city.name === action.payload.name
+        (city) => city.name === currentWeather.name
       )
       if (checkCity.length === 0) {
-        state.citiesList.push(action.payload)
+        state.citiesList.push(currentWeather)
+        state.weekWeatherList.push(weekWeather)
         const newList = state.citiesList
+        const newWeekWeather = state.weekWeatherList
         localStorage.setItem('cites', JSON.stringify(newList))
+        localStorage.setItem('weekWeather', JSON.stringify(newWeekWeather))
       } else {
         toast.error('city is already in the list')
       }
@@ -70,15 +77,24 @@ const weatherSlice = createSlice({
       state.weekWeather = action.payload.weekWeatherData
 
       const localStorageData = JSON.parse(localStorage.getItem('cites'))
+      const localStorageWeekData = JSON.parse(
+        localStorage.getItem('weekWeather')
+      )
 
       if (state.citiesList.length === 0 && localStorageData === null) {
         state.citiesList.push(action.payload.currentWeatherData)
+        state.weekWeatherList.push(action.payload.weekWeatherData)
         localStorage.setItem(
           'cites',
           JSON.stringify([action.payload.currentWeatherData])
         )
+        localStorage.setItem(
+          'weekWeather',
+          JSON.stringify([action.payload.weekWeatherData])
+        )
       } else {
         state.citiesList = localStorageData
+        state.weekWeatherList = localStorageWeekData
       }
     },
     [getCurrentWeather.rejected]: (state) => {

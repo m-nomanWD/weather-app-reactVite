@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.css'
 import {
   handleCurrentWeather,
@@ -10,43 +10,39 @@ import { Searchbar } from '../index'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 export default function CitiesList() {
-  // const [value, setValue] = React.useState('')
-  // const googleKey = 'AIzaSyBeePvyyOPfn73O-_QC5ok9MkcaExj8kiM'
-  // const getName = async () => {
-  //   const data = await axios(
-  //     `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&types=(cities)&key=${googleKey}`
-  //   )
-  //   console.log(data)
-  // }
   const localStorageData = JSON.parse(localStorage.getItem('cites'))
   console.log(localStorageData)
   const dispatch = useDispatch()
-  const { citiesList, currentWeather } = useSelector(
+  const { citiesList, currentWeather, weekWeather } = useSelector(
     (store) => store.currentWeather
   )
+  const [isActive, setIsActive] = useState(currentWeather.name)
+  function toggle(name) {
+    setIsActive(name)
+  }
 
-  // if (citiesList.length === null) {
-  //   return <h1>list empty</h1>
-  // }
   if (localStorageData !== null) {
     return (
       <>
         <div className={styles.citiesContainer}>
           <CardHeading icon={<PaperAirplain />} text={'Your cities list'} />
           <span className={styles.plus}>
-            <PlusButton onClickAction={handleAddCity(currentWeather)} />
+            <PlusButton
+              onClickAction={handleAddCity({ currentWeather, weekWeather })}
+            />
           </span>
-          {/* <input
-          type='text'
-          value={value}
-          onChange={(e) => {
-            setValue(e.currentTarget.value)
-            getName()
-          }}
-        /> */}
+
           <div className={styles.singleCityContainer}>
-            {localStorageData.map((city) => {
-              return <SingleCity city={city} />
+            {localStorageData.map((city, index) => {
+              return (
+                <SingleCity
+                  city={city}
+                  index={index}
+                  key={index}
+                  isActive={isActive}
+                  onClickAction={toggle}
+                />
+              )
             })}
           </div>
         </div>
@@ -60,17 +56,17 @@ export default function CitiesList() {
           <span className={styles.plus}>
             <PlusButton onClickAction={handleAddCity(currentWeather)} />
           </span>
-          {/* <input
-          type='text'
-          value={value}
-          onChange={(e) => {
-            setValue(e.currentTarget.value)
-            getName()
-          }}
-        /> */}
+
           <div className={styles.singleCityContainer}>
-            {citiesList.map((city) => {
-              return <SingleCity city={city} />
+            {citiesList.map((city, index) => {
+              return (
+                <SingleCity
+                  city={city}
+                  index={index}
+                  isActive={isActive}
+                  onClickAction={toggle}
+                />
+              )
             })}
           </div>
         </div>

@@ -3,16 +3,15 @@ import styles from './index.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { MainText, WeatherIcon } from '../index'
 import { convertToCal, convertToFer, convertTime } from '../../lib/utils/helper'
-import { PaperAirplain, SunRise, SunSet } from '../../constants'
 import { useEffect, useState } from 'react'
 import { handleCurrentWeather } from '../../features/getWeatherSlice'
 
-export default function SingleCity({ city }) {
+export default function SingleCity({ city, index, isActive, onClickAction }) {
   const dispatch = useDispatch()
   const { checkTempUnit } = useSelector((store) => store.tempSlice)
   const { main, sys, name, weather, timezone, dt } = city
   const { temp } = main
-  const { country, sunrise, sunset } = sys
+  const { country } = sys
   const { description, icon } = weather[0]
   const cal = convertToCal(temp)
   const fer = convertToFer(temp)
@@ -23,7 +22,6 @@ export default function SingleCity({ city }) {
       setCurrentTime((prevTime) => new Date(prevTime.getTime() + 1000))
     }, 1000)
 
-    // Cleanup function to clear the interval when the component unmounts
     return () => clearInterval(intervalId)
   }, [])
   const formattedTime = currentTime
@@ -32,8 +30,14 @@ export default function SingleCity({ city }) {
     .replace(/\..+/, '')
   return (
     <div
-      className={styles.singleCityContainer}
-      onClick={() => dispatch(handleCurrentWeather(name))}
+      className={
+        isActive === name ? styles.activeCity : styles.singleCityContainer
+      }
+      onClick={() => {
+        dispatch(handleCurrentWeather(name))
+
+        onClickAction(name)
+      }}
     >
       <div className={styles.cityHeader}>
         <MainText text={`${name}, ${country}`} level={4} />
